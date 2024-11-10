@@ -13,14 +13,14 @@ serviceControl.createService = async (req, res) => {
     try {
         let prices = req.body.prices;
         if (typeof prices === 'string') {
-            prices = JSON.parse(prices); // Parse JSON string into array if necessary
+            prices = JSON.parse(prices); // Parse JSON string into array 
         }
 
         const service = new Service({
             name: req.body.name,
             description: req.body.description,
             prices: prices,
-            image: req.file ? `/uploads/${req.file.filename}` : null // Assign image path
+            image: req.file ? `/uploads/${req.file.filename}` : null 
         });
 
         await service.save();
@@ -63,7 +63,7 @@ serviceControl.updateService = async (req, res) => {
     try {
         let prices = req.body.prices;
         if (typeof prices === 'string') {
-            prices = JSON.parse(prices); // Parse JSON string into array if necessary
+            prices = JSON.parse(prices); // Parse JSON string into array 
         }
 
         const serviceData = {

@@ -27,11 +27,11 @@ const feedbackValidation = checkSchema({
         },
         notEmpty: {
             errorMessage: 'Comment cannot be empty'
-        },
-        isLength: {
-            options: { min: 10 },
-            errorMessage: 'Comment must be at least 10 characters long'
         }
+        // isLength: {
+        //     options: { min: 10 },
+        //     errorMessage: 'Comment must be at least 10 characters long'
+        // }
     }
 });
 

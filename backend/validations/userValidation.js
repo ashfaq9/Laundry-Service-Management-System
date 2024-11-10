@@ -52,10 +52,10 @@ const userRegisterValidation = {
         },
         isLength: {
             options: {
-                min: 6,
+                min: 8,
                 max: 128
             },
-            errorMessage: "Password should be between 6-128 characters"
+            errorMessage: "Password should be between 10-128 characters"
         },
         trim: true
     },

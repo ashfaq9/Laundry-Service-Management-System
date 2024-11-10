@@ -1,6 +1,6 @@
-const { checkSchema } = require('express-validator');
 
-const serviceValidation = checkSchema({
+
+const serviceValidation = {
     name: {
         in: ['body'],
         exists: {
@@ -51,6 +51,6 @@ const serviceValidation = checkSchema({
             }
         }
     }
-});
+};
 
 module.exports = serviceValidation;

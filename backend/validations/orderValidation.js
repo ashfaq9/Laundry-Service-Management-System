@@ -1,6 +1,6 @@
-const { checkSchema } = require('express-validator');
 
-const orderValidation = checkSchema({
+
+const orderValidation = {
   orderPersonName: {
     in: ['body'],
     exists: { errorMessage: 'Order person name is required' },
@@ -68,6 +68,6 @@ const orderValidation = checkSchema({
     exists: { errorMessage: 'Longitude is required' },
     isFloat: { options: { min: -180, max: 180 }, errorMessage: 'Invalid longitude' },
   },
-});
+};
 
 module.exports = orderValidation;

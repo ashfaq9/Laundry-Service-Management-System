@@ -243,39 +243,6 @@ PaymentControl.cancelPayment = async (req, res) => {
   }
 };
 
-// Get Payment Completion Details
-// PaymentControl.getPaymentCompletionDetails = async (req, res) => {
-//   try {
-//     const transactionId = req.params.id;
-//     const transaction = await Transaction.findById(transactionId).populate('user order');
-
-//     if (!transaction) {
-//       return res.status(404).json({ message: 'Transaction not found' });
-//     }
-
-//     res.status(200).json(transaction);
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//     console.error('Get Payment Completion Details Error:', error.message);
-//   }
-// };
-
-// cron.schedule('* * * * *', async () => {
-//   try {
-//       const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000); // 1 hour ago
-
-//       // Find and delete orders with a "Pending" status older than 1 hour
-//       const result = await Order.deleteMany({
-//           orderStatus: 'Pending',
-//           createdAt: { $lt: oneHourAgo }
-//       });
-
-//       console.log(`Deleted ${result.deletedCount} pending orders older than 1 hour.`);
-//   } catch (error) {
-//       console.error('Error deleting old pending orders:', error.message);
-//   }
-// });
-
 
 
 

@@ -24,12 +24,12 @@ const orderSchema = new Schema({
    enum: ['Pending','Ordered','Completed','canceled','Confirmed',  'Picked Up','In Service', 'Delivered'],
         default: 'Pending'
   },
-  orderPersonName: { type: String, required: true }, // Required field
+  orderPersonName: { type: String, required: true }, 
   phoneNumber: { type: String, required: true },
   expiresAt: {
     type: Date,
     expires: '1h', 
-    default: () => Date.now() + 60 * 60 * 100 // 1 hour from creation
+    default: () => Date.now() + 60 * 60 * 100 
 }
 }, { timestamps: true });
 
@@ -37,7 +37,7 @@ orderSchema.pre('save', function (next) {
   if (this.status === 'Pending') {
     this.expiresAt = Date.now() + 60 * 60 * 1000; // 1 hour from creation
   } else {
-    this.expiresAt = undefined; // Remove expiresAt if status is not Pending
+    this.expiresAt = undefined; 
   }
   next();
 });

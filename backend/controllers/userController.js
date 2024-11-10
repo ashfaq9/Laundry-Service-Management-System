@@ -5,12 +5,12 @@ const { validationResult } = require('express-validator');
 const { forgetPasswordEmail, welcomeEmail } = require('../utils/nodeMailer');
 const asyncHandler = require('express-async-handler');
 const generateToken = require('../utils/generateToken');
-const fs = require('fs'); // For file deletion if needed
+const fs = require('fs'); 
 const path = require('path');
 
 const userControl = {};
 
-// Register User
+
 userControl.registerUser = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -20,7 +20,6 @@ userControl.registerUser = async (req, res) => {
   const { firstName, lastName, email, password, phone, address, role } = req.body;
 
   try {
-    // Check if user already exists
     const userExists = await User.findOne({ email });
     if (userExists) {
       return res.status(400).json({ errors: [{ param: 'email', msg: 'Email is already taken' }] });
@@ -57,21 +56,6 @@ userControl.registerUser = async (req, res) => {
 };
 
 
-// In userController.js or a separate file
-// userControl.checkEmail = async (req, res) => {
-//   const { email } = req.body;
-
-//   try {
-//     const user = await User.findOne({ email });
-//     if (user) {
-//       return res.status(400).json({ available: false });
-//     } else {
-//       return res.status(200).json({ available: true });
-//     }
-//   } catch (error) {
-//     return res.status(500).json({ message: error.message });
-//   }
-// };
 
 
 // Login User

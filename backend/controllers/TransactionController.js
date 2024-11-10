@@ -1,8 +1,6 @@
 const Transaction = require('../models/TransactionModel');
 const Order = require('../models/OrderModel');
 const User = require('../models/UserModel');
-// const generateTransactionReport = require('../utils/generateTransactionReport');
-// const { sendEmail } = require('../utils/nodeMailer');
 const mongoose = require('mongoose');
 
 
@@ -70,7 +68,6 @@ TransactionControl.getTransactionByOrder = async (req, res) => {
     }
 };
 
-// Get all transactions for a user
 // Get all transactions for a user
 TransactionControl.getUserTransactions = async (req, res) => {
     try {

@@ -6,7 +6,7 @@ const authenticateUser = (req, res, next) => {
     return res.status(400).json({ errors: "Token is required" });
   }
 
-  const token = authHeader.split(' ')[1]; // Extract token from 'Bearer <token>'
+  const token = authHeader.split(' ')[1]; 
   if (!token) {
     return res.status(400).json({ errors: "Token is required" });
   }

@@ -32,7 +32,7 @@ app.use('/api/transactions', transactionRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/feedback', feedbackRoutes);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-console.log('Stripe Secret Key:', process.env.STRIPE_SECRET_KEY); // Ensure the key is being loaded correctly
+console.log('Stripe Secret Key:', process.env.STRIPE_SECRET_KEY); 
 
 
 

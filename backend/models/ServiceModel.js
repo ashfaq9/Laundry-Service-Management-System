@@ -16,7 +16,7 @@ const ServiceSchema = new Schema({
             price: { type: Number, required: true }
         }
     ],
-    image: { type: String, required: true }//
+    image: { type: String, required: true }
 }, { timestamps: true });
 
 const Service = model('Service', ServiceSchema);
